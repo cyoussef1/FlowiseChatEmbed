@@ -1,5 +1,6 @@
 import { registerWebComponents } from './register';
 import { parseChatbot, injectChatbotInWindow } from './window';
+export { KaminoChat } from './kamino';
 
 registerWebComponents();
 

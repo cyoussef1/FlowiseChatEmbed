@@ -20,8 +20,26 @@ interface KaminoChatProps {
 }
 
 const defaultSendMessage: SendMessageFn = async (message: string) => {
+
+  const response = await fetch(
+    'https://console.venar.tech:3001/api/v1/prediction/4b567ab9-08ec-4e6b-9e56-44d0d92ce6df',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ question: message }),
+    },
+  );
+  const data = await response.json();
+  return {
+    text: data.text || data.answer || '',
+    mediaUrl: data.mediaUrl,
+  };
+=======
   // Placeholder implementation
   return { text: `Echo: ${message}` };
+
 };
 
 export const KaminoChat: Component<KaminoChatProps> = (props) => {

@@ -352,6 +352,22 @@ yarn dev
 
 **Note:** The development URL (http://localhost:5678) is automatically added to allowed domains in development mode. You don't need to add it manually.
 
+## Kamino Chat Example
+
+You can also mount the lightweight `KaminoChat` component directly. It
+connects by default to `https://console.venar.tech:3001` using chatflow ID
+`4b567ab9-08ec-4e6b-9e56-44d0d92ce6df`.
+
+```html
+<script type="module">
+  import { KaminoChat } from './web.js';
+  import { render } from 'solid-js/web';
+
+  render(() => <KaminoChat />, document.getElementById('root'));
+</script>
+```
+
+
 ## License
 
 Source code in this repository is made available under the [MIT License](https://github.com/FlowiseAI/Flowise/blob/master/LICENSE.md).
