@@ -1,3 +1,4 @@
+export { KaminoChat } from './kamino';
 declare const chatbot: {
     initFull: (props: {
         chatflowid: string;
